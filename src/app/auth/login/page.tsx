@@ -4,7 +4,6 @@ import Input from '@/components/Input'
 import axios from 'axios'
 import { signIn } from 'next-auth/react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 
