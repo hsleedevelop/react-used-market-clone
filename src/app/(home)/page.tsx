@@ -3,7 +3,7 @@ import getProducts, { IProductParameters } from "../actions/getProducts";
 import { getCurrentUser } from "../actions/getCurrentUser";
 import Container from "@/components/Container";
 import EmptyState from "@/components/EmptyState";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
 import FloatingButton from "@/components/FloatingButton";
 import Categories from "@/components/categories/Categories";
 import Pagination from "@/components/Pagination";
