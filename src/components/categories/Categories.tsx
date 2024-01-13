@@ -1,4 +1,8 @@
+'use client';
+
+import { useSearchParams } from "next/navigation";
 import { TbBadge, TbBeach, TbCar, TbMan, TbMountain, TbSportBillard, TbWoman } from "react-icons/tb";
+import CategoryBox from "./CategoryBox";
 
 export const categories = [
   {
@@ -50,3 +54,26 @@ export const categories = [
     description: "중고차 카테고리입니다."
   },
 ]
+
+const Categories = () => {
+  const parameters = useSearchParams();
+  const category = parameters?.get("category");
+
+  return (
+    <div className="
+    flex flex-row items-center justify-between overflow-x-auto pt-4
+    ">
+      {categories.map((item) => (
+        <CategoryBox
+          key={item.label}
+          label={item.label}
+          path={item.path}
+          icon={item.icon}
+          selected={category === item.path}
+        />
+      ))}
+    </div>
+  )
+}
+
+export default Categories

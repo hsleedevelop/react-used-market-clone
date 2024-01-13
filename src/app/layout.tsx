@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { getCurrentUser } from "./actions/getCurrentUser";
 import Script from "next/script";
+import DebugPageLog from "@/components/debug/DebugPageLog";
+import Toast from "@/components/Toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +25,13 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar currentUser={currentUser} />
+        <Toast />
         {children}
         <Script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=59d6694dbbc782911f85b944e451af38&libraries=services,clusterer&autoload=false" />
+        { 
+          (process.env.DEBUG === 'true') &&
+          <DebugPageLog />
+        }
       </body>
     </html>
   );
