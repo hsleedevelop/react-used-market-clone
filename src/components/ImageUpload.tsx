@@ -13,8 +13,6 @@ interface ImageUploadProps {
   value: string
 }
 
-const uploadPreset = "fdlsafjsda"
-
 const ImageUpload: React.FC<ImageUploadProps> = ({
   onChange,
   value

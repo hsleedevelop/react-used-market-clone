@@ -57,12 +57,12 @@ const ProductClient: React.FC<IProductClientProps> = ({
           </div>
         </div>
 
-        {currentUser?.id === product.userId && (
+        {currentUser?.id !== product.userId && (
           <div className="py-6">
             <Button
               onClick={() =>
                 router.push(
-                  `chat?id=${product.userId}&name=${product.user.name}&image=${product.user.image}`
+                  `/chat?id=${product.userId}&name=${product.user.name}&image=${product.user.image}`
                 )
               }
               label="Chat with this user"
